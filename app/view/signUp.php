@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <h1>Cadastro</h1>
-        <form action="?class=User&action=signIn" method="post">
+        <form action="?class=User&action=signUp" method="post">
             <div class="form-control">
                 <label for="username">Usuário</label>
                 <input placeholder="username *" type="text" name="username" id="username" required>

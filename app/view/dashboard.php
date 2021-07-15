@@ -40,11 +40,11 @@ function logOut()
                         <td><?= $value->getId() ?></td>
                         <td><?= $value->getEmail() ?></td>
                         <td><?= $value->getUsername() ?></td>
-                        <td><?= $value->getNomeCompleto() ?></td>
+                        <td><?= $value->getFull_name() ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <form action="?class=Usuario&action=logout" method="post" required>
+            <form action="?class=User&action=logout" method="post" required>
                 <button type="submit">Sair</button>
             </form>
         </section>
