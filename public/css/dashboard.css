@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font: 700 60px "Roboto", sans-serif;
+}
+
+table,
+th,
+td {
+    background-color: #191920;
+    border: 1px solid black;
+    font: 400 2rem "Roboto", sans-serif;
+}
+
+table {
+    margin-top: 2rem;
+    background-color: #3f51b5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+td {
+    padding: 10px;
+}
+
+button {
+    width: 300px;
+    height: 30px;
+    background: #ba000d;
+    font: 500 15px "Roboto", sans-serif;
+    margin: 10px 0;
+}

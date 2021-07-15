@@ -6,7 +6,7 @@
 }
 
 h1 {
-    font: 700 60px Roboto, sans-serif;
+    font: 700 60px "Roboto", sans-serif;
     margin: 5% 0 2% 0;
 }
 
@@ -19,7 +19,7 @@ h1 {
 }
 
 .form-control > label {
-    font: 400 20px Roboto, sans-serif;
+    font: 400 20px "Roboto", sans-serif;
 }
 
 .form-control > input {
@@ -40,11 +40,11 @@ button {
 }
 
 span {
-    font: 400 15px Roboto, sans-serif;
+    font: 400 15px "Roboto", sans-serif;
 }
 
 a {
-    font: 400 15px Roboto, sans-serif;
+    font: 400 15px "Roboto", sans-serif;
     color: #7159c1;
     text-decoration: none;
 }
