@@ -8,6 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/global.css">
+    <link rel="stylesheet" href="public/css/signUp.css">
     <title>signIn</title>
 </head>
 
@@ -15,7 +20,7 @@
     <div class="container">
         <h1>Cadastro</h1>
         <form action="?class=User&action=signIn" method="post">
-            <div class="form">
+            <div class="form-control">
                 <label for="username">Usuário</label>
                 <input placeholder="username *" type="text" name="username" id="username" required>
             </div>
