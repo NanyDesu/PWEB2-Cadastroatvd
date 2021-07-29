@@ -1,7 +1,11 @@
 <?php
 require_once "app/model/User.php";
 $user = $_SESSION["loggedUser"];
-$users = User::listUser();
+if (isset($_GET["search"])){
+    $users = User::search($_GET["search"]);
+}else{
+    $users = User::listUser();
+}
 function logOut()
 {
     session_destroy();
@@ -28,6 +32,11 @@ function logOut()
     <div class="container">
         <section>
             <h1> Seja Bem Vindo <?= $user['username'] ?></h1>
+            <form action="?view=home" method="get">
+                <label for="">Pesquisar usuarios</label>
+                <input id="search" name="search" type="text">
+                <button type="submit">Buscar</button>
+            </form>
             <table>
                 <thead>
                     <th>Id</th>

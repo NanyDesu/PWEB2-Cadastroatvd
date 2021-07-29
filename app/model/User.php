@@ -44,21 +44,35 @@ class User
        $this->setPassword(password_hash($this->getPassword(), PASSWORD_DEFAULT));
     }
 
+    public static function search(String $queryString){
+        $stmt =  Connection::getConnection()->prepare('SELECT * FROM users WHERE email LIKE :query_string or username LIKE :query_string or fullname LIKE :query_string');
+        $queryString = '%' . $queryString . '%';
+        $stmt->bindParam(":query_string", $queryString);
+        $fetchAll = $stmt->execute();
+        $fetchAll = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $users = User::mapUser($fetchAll);
+        return $users;
+    }
+
     public static function listUser()
     {
         try {
             $query = Connection::getConnection()->query('SELECT * FROM user');
             $list = $query->fetchAll(PDO::FETCH_ASSOC);
-            $users = array_map(function ($e) {
-                $user =  new User($e['email'], $e['username'], $e['full_name'], $e['password']);
-                $user->setId($e['id']);
-                return $user;
-            }, $list);
+            $users = User::mapUser($list);
             return $users;
         } catch (Exception $err) {
             echo `<div class="exeption">` . $err->getMessage() . `</div>`;
             return false;
         }
+    }
+
+    private static function mapUser($list){
+        return array_map(function ($e) {
+            $user =  new User($e['email'], $e['username'], $e['full_name'], $e['password']);
+            $user->setId($e['id']);
+            return $user;
+        }, $list);
     }
 
     public static function signIn(String $email, String $password)
