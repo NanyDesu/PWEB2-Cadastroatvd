@@ -45,7 +45,7 @@ class User
     }
 
     public static function search(String $queryString){
-        $stmt =  Connection::getConnection()->prepare('SELECT * FROM user WHERE email LIKE :query_string or username LIKE :query_string or fullname LIKE :query_string');
+        $stmt =  Connection::getConnection()->prepare('SELECT * FROM user WHERE email LIKE :query_string or username LIKE :query_string or full_name LIKE :query_string');
         $queryString = '%' . $queryString . '%';
         $stmt->bindParam(":query_string", $queryString);
         $fetchAll = $stmt->execute();
