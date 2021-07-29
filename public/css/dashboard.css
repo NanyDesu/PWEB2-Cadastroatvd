@@ -40,3 +40,8 @@ button {
     font: 500 15px "Roboto", sans-serif;
     margin: 10px 0;
 }
+
+input {
+    height: 30px;
+    font: 500 15px "Roboto", sans-serif;
+}
